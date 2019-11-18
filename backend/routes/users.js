@@ -1,20 +1,50 @@
-const router = require('express').Router();
-let User = require('../models/user.model');
+const express = require("express");
+const errorObj =  require("../config/settings").errorObj;
+import userCtrl from "../controllers/user";
 
-router.route('/').get((req, res) => {
-  User.find()
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
+const app = express.Router();
 
-router.route('/add').post((req, res) => {
-  const username = req.body.username;
+const console = require("tracer").console();
 
-  const newUser = new User({username});
 
-  newUser.save()
-    .then(() => res.json('User added!'))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
+app
+    .route("/")
+    .post(async (req, res) => {
+        let {body} = req;
+        console.log(body,'body')
+        let response = await userCtrl.add(body);
+        res.json(response);
+    })
 
-module.exports = router;
+app
+    .route("/login")
+    .post(async (req, res) => {
+    const { body } = req;
+    const response = await userCtrl.login(body);
+
+    res.json(response);
+    // res.render('login.ejs')
+    });
+
+app
+  .route("/user/:_id")
+  .get(async (req, res) => {
+    const {
+      params: { _id }
+    } = req;
+    const response = await userCtrl.userById(_id);
+
+    return res.json({ ...response });
+  })
+  .delete(async (req, res) => {
+    const {
+      params: { _id }
+    } = req;
+    if (!_id) {
+      res.json({ ...errorObj, message: "Expected  _id." });
+    }
+    let response = await userCtrl.delete(_id);
+    res.json(response);
+  });
+
+module.exports =  app;
