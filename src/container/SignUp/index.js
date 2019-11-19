@@ -48,7 +48,7 @@ const SignUp = props => {
   };
   return (
     <>
-      {toast}
+      {/* {toast} */}
       <div className={styles.Card}>
         <Card className="text-center">
           <Card.Header>Register</Card.Header>
