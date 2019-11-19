@@ -1,0 +1,19 @@
+.NewOrder {
+  margin: 15px 15px;
+  padding: 50px auto;
+  float: right;
+}
+
+.btn-space {
+  margin-right: 5px;
+}
+
+.MainTable {
+  margin: 50px 150px auto;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Modal {
+  margin: 150px 150px auto;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
