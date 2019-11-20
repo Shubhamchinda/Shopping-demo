@@ -33,8 +33,13 @@ This project is bootstrapped with Create react-app.
 * Routes folder have all the api related to the project
 # Modules used in Backend
 * cors
+* dotenv
+* bcrypt-nodejs
+* jsonwebtoken
 * express-session
 * express
+* tracer
+* passport-local
 * mongoose
 * passport
 * lodash
