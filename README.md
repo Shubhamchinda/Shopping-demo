@@ -31,7 +31,7 @@ This project is bootstrapped with Create react-app.
 * Models have a database structure.
 * For deleting I used soft-delete
 * Routes folder have all the api related to the project
-# Modules used Backend
+# Modules used in Backend
 * cors
 * express-session
 * express
@@ -44,6 +44,8 @@ This project is bootstrapped with Create react-app.
 
 I used class based and functional based components in frontend. 
 I used Hooks as well.
+
+To be able to use CSS modules I ejected the project with `npm run eject` and made changes in `webconfig` file accordingly.
 
 **Pages**
 
@@ -65,6 +67,19 @@ I created as many different components as possible in order to make the code und
 * TableBody
 * NewOrder Form
 * Pop-up Modal
+
+# Modules used in frontend List
+* Bootstrap
+* axios
+* concurrently
+* react
+* react-router
+* react-router-dom
+
+
+I made sure that I use latest ECMA Script and also implement lated react features such as `React Hooks`.
+
+
 
 
 
