@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
+
 
 import SignIn from "./../SignIn";
 import SignUp from "./../SignUp";
@@ -41,4 +43,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default withRouter(Main);

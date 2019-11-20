@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Card, Form, Row, Col } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
+import {} from "react-router";
 
 import styles from "./styles.css";
 import Request from "../../request";
@@ -12,6 +13,10 @@ const SignIn = props => {
   const [password, setPassword] = useState(null);
   const [toast, setToast] = useState(null);
   const [alert, setAlert] = useState(null);
+
+  useEffect(() => {
+    console.log(props);
+  }, []);
 
   let temp;
   const handleSubmit = async event => {
@@ -29,13 +34,15 @@ const SignIn = props => {
     console.log(resp);
     if (!resp.error) {
       const _id = resp.user._id;
+
+      setAlert(false);
+
+      localStorage.setItem("user", JSON.stringify(resp.user));
+
       props.history.push({
         pathname: `/orders`,
         user: resp.user
       });
-      setAlert(false);
-
-      localStorage.setItem("user", JSON.stringify(resp.user));
     } else {
       setAlert(true);
       let data = {
