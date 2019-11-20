@@ -82,7 +82,7 @@ I created as many different components as possible in order to make the code und
 * react-router-dom
 
 
-I made sure that I use latest ECMA Script and also implement lated react features such as `React Hooks`.
+I made sure that I use latest ECMA Script and also implement latest react features such as `React Hooks`.
 
 
 
